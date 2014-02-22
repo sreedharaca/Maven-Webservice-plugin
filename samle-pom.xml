@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>JWSCTest</groupId>
+	<artifactId>JWSCTest</artifactId>
+	<version>1.0.0</version>
+	<dependencies>
+
+
+		<dependency>
+			<groupId>com.googlecode</groupId>
+			<artifactId>gmail4j</artifactId>
+			<version>0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j.adapters</groupId>
+			<artifactId>slf4j-impl</artifactId>
+			<version>2.0-beta2</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sree.mavenplugin</groupId>
+				<artifactId>Maven-Webservice-plugin</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>jwsc</goal>
+						</goals>
+						<configuration>
+							<jwscTaskType>JAXRPC</jwscTaskType>
+							<contextPath>Echo</contextPath>
+							<sourceIncludes>**/Echo.java</sourceIncludes>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-utils</artifactId>
+						<version>3.0.15</version>
+					</dependency>
+					<dependency>
+						<groupId>com.sun.xml.bind</groupId>
+						<artifactId>jaxb-xjc</artifactId>
+						<version>2.1.6</version>
+					</dependency>
+					<dependency>
+						<groupId>com.sun</groupId>
+						<artifactId>tools</artifactId>
+						<version>1.6.0</version>
+						<scope>system</scope>
+						<systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		 
+	</build>
+</project>
