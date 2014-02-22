@@ -104,11 +104,7 @@ public class WSGenMojo extends AbstractMojo {
             
             project.createClassLoader(path);
             
-            FileSet localFileSet = new FileSet();
-            localFileSet.setDir(new File("C:\\Users\\SIRI\\workspaceb\\MISGen\\bin"));
-            
-             //path.addFileset(localFileSet);
-            
+           
              
              if ( getLog().isDebugEnabled() )
              {
